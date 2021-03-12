@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+</head>
+
+<body background="{% static 'images/background.jpg' %}">
+
+  <center>
+
+
+      <h1 class="display-1">User Login</h1>
+      <br>
+
+
+      <form action="{% url 'user_login' %}" method="post">
+
+        <div class="container">
+
+          <div class="form-group mt-5">
+            {% csrf_token %}
+            <h4><label for="email">Email</label></h5>
+            <input type="email" name="email" placeholder="Enter email" class="form-control" style="background-color:#333333; color:white; text-align:center; width: 500px; border-color:#333333;">
+
+          </div>
+
+
+
+          <div class="form-group mt-5">
+
+            <h4><label for="password">Password</label></h4>
+            <input type="password" name="password" class="form-control" placeholder="Enter password" style="background-color:#333333; color:white; text-align:center; width: 500px; border-color:#333333;">
+
+          </div>
+
+
+          <input type="submit" class = "btn btn-outline-success btn-lg mt-5" value="Login">
+
+        </div>
+
+      </form>
+      <a href="{% url 'home' %}"><button class="btn btn-lg btn-outline-info">Home</button></a>
+  </center>
+</body>
+</html>

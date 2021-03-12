@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+
+    <head>
+        <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    </head>
+
+    <body background="{% static 'images/background.jpg' %}">
+        <div class="container">
+
+            <center> 
+                <h1 class="display-1">Home</h1>               
+                {% if user.is_authenticated %}
+                    <a href="{% url 'user_logout' %}"><button class="btn btn-outline-danger">Logout</button></a>
+                    <a href="{% url 'user_info' %}"><button class="btn btn-outline-success">User Info</button></a>
+            
+                {% else %}
+                    <a href="{% url 'signup' %}"><button class="btn btn-outline-primary">Signup</button></a>
+                    <a href="{% url 'user_login' %}"><button class="btn btn-outline-primary">Login</button></a>
+
+                {% endif %}
+            </center>
+        </div>
+    </body>
+</html>

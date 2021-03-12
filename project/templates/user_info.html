@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    </head>
+    <body background="{% static 'images/background.jpg' %}">
+        <center>
+            <h1 class="display-3">Email : {{email}}</h1>
+            <br>
+            <h1 class="display-3">Phone : {{phone}}</h1>
+            <a href="{% url 'home' %}"><button class="btn btn-lg btn-outline-info">Home</button></a>
+        </center>
+    </body>
+</html>

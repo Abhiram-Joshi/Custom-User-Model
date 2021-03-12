@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+
+  <head>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+  </head>
+
+  <body background="{% static 'images/background.jpg' %}">
+    <center>
+
+    {% if registered %}
+      <h1>Thank you for registering!</h1>
+
+    {% else %}
+      <h1 class="display-1">Register Here!</h1>
+      <h1 class="display-4 my-5">Fill out the form</h1>
+      <br>
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="container">
+          {{ form.as_p }}
+        </div>
+
+        <input type="submit" class="btn btn-outline-success btn-lg" value="Register">
+        
+      </form>
+    {% endif %}
+    <a href="{% url 'home' %}"><button class="btn btn-lg btn-outline-info">Home</button></a>
+    </center>
+  </body>
+
+
+</html>
