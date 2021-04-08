@@ -128,3 +128,5 @@ STATICFILES_DIRS = [
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'

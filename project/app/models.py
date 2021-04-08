@@ -13,7 +13,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
-    phone = models.PositiveIntegerField()
+    phone = models.PositiveIntegerField(null=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
