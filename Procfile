@@ -1,2 +1,2 @@
-web: cd project && gunicorn myproject.wsgi
+web: cd project && gunicorn project.wsgi
 release: cd project && python manage.py migrate
