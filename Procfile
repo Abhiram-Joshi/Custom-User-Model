@@ -1,3 +1,3 @@
 web: cd project && gunicorn project.wsgi
 release: cd project && python manage.py migrate
-release: cd project && python manage.py createsuperuser a@gmail.com qwerty
+release: cd project && python manage.py createsuperuser --email "a@gmail.com" --password "qwerty"
